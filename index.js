@@ -41,10 +41,9 @@ function init() {
     inquirer.prompt(questions).then((answers) =>
     {
         const svgShape = generateShapes(answers);
-        const svgTemplate = `
-<svg width="300" height="200">
-<text x="200" y="100" fill="${answers.textColor}">${answers.text}</text>
-${svgShape}</svg>`;
+        const svgTemplate = `<svg width="300" height="200">${svgShape}
+<text x="50%" y="50%" fill="${answers.textColor}" text-anchor="middle" dominant-baseline="middle">${answers.text}</text>
+</svg>`;
 
         fs.writeFile('./examples/logo.svg', svgTemplate, (err) => 
         {
