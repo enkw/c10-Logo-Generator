@@ -30,6 +30,14 @@ And me, Ian Wolfe
   
 This project features inquirer to prompt the user for input, and jest to test some basic functionality.
 
+Example of prompts:
+![Git Bash showing the application presenting questions](./assets/screenshots/Screenshot-of-prompts.png)
+
+Example of the logo:
+![Screenshot of SVG code and the associated image](./assets/screenshots/Screenshot-of-logo.png)
+
+Or you can [watch a brief video demonstration](https://drive.google.com/file/d/1jAQqY_txcV-Hjd3junj1FgI_FnK9vVGE/view)
+
 ## Questions
 
 For any questions about this project, please visit my [GitHub](https://github.com/enkw).
