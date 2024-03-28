@@ -1,7 +1,8 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateShapes = require('./lib/shapes');
+const { generateShapes } = require('./lib/shapes');
 
+// This function checks the colors the user enters to make sure they're either a basic color or a hexcode
 function validateColor(input) {
     // Variable for checking if user input matches hexcodes that I learned from https://www.geeksforgeeks.org/javascript-check-if-a-string-is-a-valid-hex-color-representation/#
     const hexColor = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
@@ -14,10 +15,9 @@ function validateColor(input) {
     if (hexColor.test(input) || colorNames.includes(input.toLowerCase())) {
         return true;
     }
-
     return 'Please enter a valid color name (e.g. red, blue) or hexcode (e.g., #ff0000)';
 }
-
+// These are the questions that the user will be prompted to answer
 const questions = [
     {
         type: 'input',
@@ -53,7 +53,7 @@ const questions = [
         validate: validateColor
       }
 ];
-
+// This function causes inquirer to run and a logo to be generated based on the responses
 function init() {
     inquirer.prompt(questions).then((answers) =>
     {
@@ -68,7 +68,7 @@ function init() {
             if (err) {
                 console.error('Error creating logo.svg:', err);
             } else {
-                console.log('logo.svg has been generated');
+                console.log('Generated logo.svg');
             }
         });
     });
